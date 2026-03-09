@@ -1,61 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
-    <h1>My Page</h1>
+    <nav>
+      <div class="nav-wrapper teal" style="padding-left: 10px;">
+        <a href="#!" class="brand-logo">Ajax Demo</a>
+      </div>
+    </nav>
 
-    <input type="button" id="alertBtn" value="alert" onclick="alertFun()"/>
-    <input type="button" value="confirm" onclick="confirmFun()"/>
-    <input type="button" value="prompt" onclick="promptFun()"/>
-
-    <span id="result"></span>
-
-    <br><br>
-
-    <img src="https://www.placecage.com/200/300" alt="Place Cage" onload="loaded()">
-
-    <br><br>
-
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>name</th>
-          <th>Type</th>
-          <th>website</th>
-        </tr>
-      </thead>
-      <tbody id="tableResult"></tbody>
-    </table>
+    <main class="row" style="padding: 40px">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>name</th>
+            <th>Type</th>
+            <th>website</th>
+          </tr>
+        </thead>
+        <tbody id="result">
+        </tbody>
+      </table>
+    </main>
 
     <script>
-      function alertFun(){
-        alert("Hello!");
-      }
-
-      function confirmFun(){
-        let didConfirm = confirm("Are you sure?");
-        document.querySelector("#result").innerHTML = didConfirm;
-      }
-
-      function promptFun(){
-        let name = prompt("Enter your name");
-        document.querySelector("#result").innerHTML = name;
-      }
-
-      function loaded(){
-        console.log("img loaded");
-      }
-
       function drawTable(records){
-        let result = document.querySelector("#tableResult");
+        let result = document.querySelector("#result");
         let html = "";
 
         for(let record of records){
@@ -85,6 +60,5 @@
 
       loadData();
     </script>
-    <script src="script.js"></script>
   </body>
 </html>
